@@ -1,0 +1,152 @@
+{
+	"folders": {},
+	"connections": {
+		"mysql5-17139addc55-51c8b5bcc99eb32d": {
+			"provider": "mysql",
+			"driver": "mysql5",
+			"name": "MySQL - localhost",
+			"save-password": true,
+			"read-only": false,
+			"configuration": {
+				"host": "127.0.0.1",
+				"port": "3306",
+				"url": "jdbc:mysql://127.0.0.1:3306/",
+				"home": "/usr/local/mysql-5.7.10-osx10.9-x86_64",
+				"type": "dev",
+				"auth-model": "native"
+			}
+		},
+		"mysql5-17139afb7c7-3a61a99491aa0414": {
+			"provider": "mysql",
+			"driver": "mysql5",
+			"name": "VS Prod",
+			"save-password": true,
+			"read-only": false,
+			"configuration": {
+				"host": "vs-prod-db-clstr.cluster-c0pkzgh5yanm.eu-west-1.rds.amazonaws.com",
+				"port": "3306",
+				"url": "jdbc:mysql://vs-prod-db-clstr.cluster-c0pkzgh5yanm.eu-west-1.rds.amazonaws.com:3306/",
+				"type": "prod",
+				"auth-model": "native",
+				"handlers": {
+					"ssh_tunnel": {
+						"type": "TUNNEL",
+						"enabled": true,
+						"save-password": true,
+						"properties": {
+							"jumpServer0.authType": "PASSWORD",
+							"jumpServer0.port": 22.0,
+							"port": 22.0,
+							"keyPath": "/Users/Mahmoud/AA-VS/awsBastionServer/Bastion-Key-Pair.pem",
+							"implementation": "jsch",
+							"bypassHostVerification": false,
+							"jumpServer0.enabled": false,
+							"host": "ec2-34-244-150-97.eu-west-1.compute.amazonaws.com",
+							"authType": "PUBLIC_KEY"
+						}
+					}
+				}
+			}
+		},
+		"mysql5-17139b19c79-62f0c607315bf762": {
+			"provider": "mysql",
+			"driver": "mysql5",
+			"name": "VS Stage",
+			"save-password": true,
+			"read-only": false,
+			"configuration": {
+				"host": "vs-stage-db-cluster.cluster-c0pkzgh5yanm.eu-west-1.rds.amazonaws.com",
+				"port": "3306",
+				"url": "jdbc:mysql://vs-stage-db-cluster.cluster-c0pkzgh5yanm.eu-west-1.rds.amazonaws.com:3306/",
+				"type": "test",
+				"auth-model": "native",
+				"handlers": {
+					"ssh_tunnel": {
+						"type": "TUNNEL",
+						"enabled": true,
+						"save-password": true,
+						"properties": {
+							"jumpServer0.authType": "PASSWORD",
+							"jumpServer0.port": 22.0,
+							"port": 22.0,
+							"keyPath": "/Users/Mahmoud/AA-VS/awsBastionServer/Bastion-Key-Pair.pem",
+							"implementation": "jsch",
+							"bypassHostVerification": false,
+							"jumpServer0.enabled": false,
+							"host": "ec2-34-244-150-97.eu-west-1.compute.amazonaws.com",
+							"authType": "PUBLIC_KEY"
+						}
+					}
+				}
+			}
+		},
+		"mysql5-1713a037fe3-bf2092d18330ef9": {
+			"provider": "mysql",
+			"driver": "mysql5",
+			"name": "MySQL - VS-TECH-iMAC-Mahmoud.local",
+			"save-password": true,
+			"read-only": false,
+			"configuration": {
+				"host": "VS-TECH-iMAC-Mahmoud.local",
+				"port": "3306",
+				"url": "jdbc:mysql://VS-TECH-iMAC-Mahmoud.local:3306/",
+				"type": "dev",
+				"auth-model": "native"
+			}
+		},
+		"oracle_thin-17fad985127-363f49f7edc8e073": {
+			"provider": "oracle",
+			"driver": "oracle_thin",
+			"name": "Oracle - Amlaki",
+			"save-password": true,
+			"read-only": false,
+			"configuration": {
+				"host": "188.226.183.153",
+				"port": "1521",
+				"database": "amlaki1",
+				"url": "jdbc:oracle:thin:@//188.226.183.153:1521/amlaki1",
+				"type": "prod",
+				"provider-properties": {
+					"@dbeaver-connection-type@": "BASIC",
+					"@dbeaver-sid-service@": "SERVICE",
+					"@dbeaver-check-schema-content@": "false",
+					"@dbeaver-always-show-dba@": "false",
+					"@dbeaver-always-use-dba-views@": "false",
+					"@dbeaver-meta-use-sys-schema@": "false",
+					"@dbeaver-meta-use-simple-constraints@": "false",
+					"@dbeaver-use-rule-hint@": "false",
+					"@dbeaver-use-meta-optimizer@": "false"
+				}
+			}
+		}
+	},
+	"connection-types": {
+		"dev": {
+			"name": "Development",
+			"color": "255,255,255",
+			"description": "Regular development database",
+			"auto-commit": true,
+			"confirm-execute": false,
+			"confirm-data-change": false,
+			"auto-close-transactions": false
+		},
+		"prod": {
+			"name": "Production",
+			"color": "org.jkiss.dbeaver.color.connectionType.prod.background",
+			"description": "Production database",
+			"auto-commit": false,
+			"confirm-execute": false,
+			"confirm-data-change": true,
+			"auto-close-transactions": true
+		},
+		"test": {
+			"name": "Test",
+			"color": "org.jkiss.dbeaver.color.connectionType.qa.background",
+			"description": "Test (QA) database",
+			"auto-commit": true,
+			"confirm-execute": false,
+			"confirm-data-change": true,
+			"auto-close-transactions": false
+		}
+	}
+}
